@@ -15,10 +15,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'sean.yang' => '272789124@qq.com' }
   s.source           = { :git => 'https://github.com/yanghl/YHLCamera', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.source_files = 'YHLCamera/Classes/**/*.{h,c,m}'
   s.resources = 'YHLCamera/Classes/**/*.{xib,nib,plist}'
   s.requires_arc = true
-  s.resource_bundles = { 'YHLCamera' => ['YHLCamera/Assets/**/*.png'] }
 
 end
