@@ -1,0 +1,7 @@
+
+platform :ios, '8.0'
+
+target 'YHLCamera_Example' do
+    pod 'YHLCamera', :path => '../'
+    
+end

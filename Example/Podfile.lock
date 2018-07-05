@@ -1,0 +1,16 @@
+PODS:
+  - YHLCamera (0.1.0)
+
+DEPENDENCIES:
+  - YHLCamera (from `../`)
+
+EXTERNAL SOURCES:
+  YHLCamera:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YHLCamera: df7f7de83376fb6cc3d2061477d7fa78c74c0c5a
+
+PODFILE CHECKSUM: 4ab78661de419747e6cb5bff81700c14a5307d1d
+
+COCOAPODS: 1.4.0.rc.1

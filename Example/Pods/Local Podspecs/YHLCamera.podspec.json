@@ -1,0 +1,22 @@
+{
+  "name": "YHLCamera",
+  "version": "0.1.0",
+  "summary": "A short description of YHLCamera.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/272789124@qq.com/YHLCamera",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "272789124@qq.com": "272789124@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/272789124@qq.com/YHLCamera.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "YHLCamera/Classes/**/*"
+}
