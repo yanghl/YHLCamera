@@ -333,9 +333,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-resources.sh",
+				"${PODS_ROOT}/../../YHLCamera/Classes/YHLCameraViewController.xib",
+				"${PODS_ROOT}/../../YHLCamera/Classes/YHLClipViewController.xib",
+				"${PODS_CONFIGURATION_BUILD_DIR}/YHLCamera/YHLCamera.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCameraViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLClipViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCamera.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

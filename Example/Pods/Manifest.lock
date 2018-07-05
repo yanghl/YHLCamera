@@ -1,5 +1,5 @@
 PODS:
-  - YHLCamera (0.1.0)
+  - YHLCamera (1.0.0)
 
 DEPENDENCIES:
   - YHLCamera (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  YHLCamera: df7f7de83376fb6cc3d2061477d7fa78c74c0c5a
+  YHLCamera: c83e2e4d57a41d91049d1ea92582c2e3087bb304
 
 PODFILE CHECKSUM: 4ab78661de419747e6cb5bff81700c14a5307d1d
 

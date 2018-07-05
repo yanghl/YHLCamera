@@ -83,6 +83,16 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/../../YHLCamera/Classes/YHLCameraViewController.xib"
+  install_resource "${PODS_ROOT}/../../YHLCamera/Classes/YHLClipViewController.xib"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/YHLCamera/YHLCamera.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/../../YHLCamera/Classes/YHLCameraViewController.xib"
+  install_resource "${PODS_ROOT}/../../YHLCamera/Classes/YHLClipViewController.xib"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/YHLCamera/YHLCamera.bundle"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
