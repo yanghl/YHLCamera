@@ -98,12 +98,16 @@
         self.driverBackMarkView.hidden=YES;
         self.drivingMarkBackView.hidden=YES;
         self.driverFrontMarkView.hidden=NO;
-    }else if(type == driverBackType || type == drivingCopyType){
+    }else if(type == drivingCopyType){
         self.driverBackMarkView.hidden=YES;
         self.drivingMarkBackView.hidden=NO;
         self.driverFrontMarkView.hidden=YES;
-    }else{
+    }else if(type == driverBackType){
         self.driverBackMarkView.hidden=NO;
+        self.drivingMarkBackView.hidden=YES;
+        self.driverFrontMarkView.hidden=YES;
+    }else{
+        self.driverBackMarkView.hidden=YES;
         self.drivingMarkBackView.hidden=YES;
         self.driverFrontMarkView.hidden=YES;
     }

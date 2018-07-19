@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *driverBackButton;
 @property (weak, nonatomic) IBOutlet UIButton *drvingFrontButton;
 @property (weak, nonatomic) IBOutlet UIButton *drvingBackButton;
+@property (weak, nonatomic) IBOutlet UIButton *IdFontButton;
+@property (weak, nonatomic) IBOutlet UIButton *IdBackButton;
+
 
 - (IBAction)stateClick:(UIButton *)sender;
 
@@ -42,6 +45,8 @@
     [self.driverBackButton setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
     [self.drvingFrontButton setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
     [self.drvingBackButton setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+    [self.IdFontButton setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+    [self.IdBackButton setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
 }
 
 
@@ -55,6 +60,8 @@
     [self.driverBackButton setEnabled:YES];
     [self.drvingFrontButton setEnabled:YES];
     [self.drvingBackButton setEnabled:YES];
+    [self.IdFontButton setEnabled:YES];
+    [self.IdBackButton setEnabled:YES];
     [btn setEnabled:NO];
 }
 
@@ -86,6 +93,10 @@
         return drivingFrontType;
     }else if(_curButton==self.drvingBackButton){
         return drivingCopyType;
+    }else if(_curButton==self.IdFontButton){
+        return IdFrontType;
+    }else if(_curButton==self.IdBackButton){
+        return IdBackType;
     }else{
         return driverCopyType;
     }
