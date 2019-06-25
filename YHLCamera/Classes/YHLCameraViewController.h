@@ -14,8 +14,10 @@ typedef enum : NSUInteger {
     driverCopyType,//驾驶证副本
     drivingFrontType,//行驶证正本正面
     drivingCopyType,//行驶证副本正面
-    IdFrontType,//身份证正面
-    IdBackType//身份证背面
+    idFrontType,//身份证正面
+    idBackType,//身份证背面
+    personType,//个人上半身照片
+    defaultType
 } cameraType;
 
 @protocol YHLCameraViewDelegate <NSObject>

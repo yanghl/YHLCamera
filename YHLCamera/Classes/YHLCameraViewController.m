@@ -45,6 +45,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *contentV;
 
 @end
 
@@ -60,13 +61,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-    {
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]){
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
     }
     [self setupUI];
-    
+    self.maskView.type=self.type;
     self.camera=[[YHLCamera alloc] init];
     
     self.clipVC=[YHLClipViewController new];
@@ -106,7 +106,14 @@
         self.driverBackMarkView.hidden=NO;
         self.drivingMarkBackView.hidden=YES;
         self.driverFrontMarkView.hidden=YES;
-    }else{
+    }else if(type == personType){
+        self.contentV.hidden=YES;
+        self.desLabel.hidden=YES;
+    }else if (type == defaultType){
+        self.contentV.hidden=YES;
+        self.desLabel.hidden=YES;
+    }
+    else{
         self.driverBackMarkView.hidden=YES;
         self.drivingMarkBackView.hidden=YES;
         self.driverFrontMarkView.hidden=YES;
@@ -132,6 +139,22 @@
         self.titleLabel.text=@"中华人民共和国机动车行驶证副本";
         self.desLabel.text=@"将行驶证副本置于此区域，并对齐右下角条形码";
         self.navigationItem.title=@"拍摄行驶证副本";
+    }else if (type==idFrontType){
+        self.titleLabel.text=@"中华人民共和国居民身份证正面";
+        self.desLabel.text=@"将身份证正面置于此区域";
+        self.navigationItem.title=@"拍摄身份证正面";
+    }else if (type==drivingCopyType){
+        self.titleLabel.text=@"中华人民共和国居民身份证背面";
+        self.desLabel.text=@"将身份证背面置于此区域";
+        self.navigationItem.title=@"拍摄身份证背面";
+    }else if (type==personType){
+        self.titleLabel.text=@"";
+        self.desLabel.text=@"";
+        self.navigationItem.title=@"拍摄个人上半身照片";
+    }else if (type==defaultType){
+        self.titleLabel.text=@"";
+        self.desLabel.text=@"";
+        self.navigationItem.title=@"系统默认拍摄";
     }
 }
 
@@ -143,18 +166,36 @@
 }
 
 -(void)clipImage:(UIImage *)image{
-    
     CGSize sz = [image size];
     CGSize size = self.view.bounds.size;
-    CGFloat x = (sz.width/size.width)*15;
-    CGFloat y = (sz.height/size.height)*150;
-    CGFloat w = (sz.width/size.width)*(size.width-30);
-    CGFloat h =(sz.height/size.height)*((size.width-30)*11.0/16);
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(w,h), NO, 0);
-    
-    [image drawAtPoint:CGPointMake(-x, -y)];
-    
+    if (self.type == personType) {
+        CGFloat left = ([UIScreen mainScreen].bounds.size.width-240)*0.5;
+        CGFloat top = ([UIScreen mainScreen].bounds.size.height-360-80)*0.5;//80 底部空白
+        CGFloat x = (sz.width/size.width)*left;
+        CGFloat y = (sz.height/size.height)*top;
+        CGFloat w = (sz.width/size.width)*(size.width-left*2);
+        CGFloat h =(sz.height/size.height)*240;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(w,h), NO, 0);
+        [image drawAtPoint:CGPointMake(-x, -y)];
+        
+    }else if (self.type == defaultType){
+        CGFloat x =0;
+        CGFloat y = 0;
+        CGFloat w = (sz.width/size.width)*(size.width);
+        CGFloat h =(sz.height/size.height)*size.height;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(w,h), NO, 0);
+        [image drawAtPoint:CGPointMake(-x, -y)];
+    }else{
+        CGSize sz = [image size];
+        CGSize size = self.view.bounds.size;
+        CGFloat x = (sz.width/size.width)*15;
+        CGFloat y = (sz.height/size.height)*150;
+        CGFloat w = (sz.width/size.width)*(size.width-30);
+        CGFloat h =(sz.height/size.height)*((size.width-30)*11.0/16);
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(w,h), NO, 0);
+        [image drawAtPoint:CGPointMake(-x, -y)];
+    }
     UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
     _image=im;
     self.clipVC.imageView.image=im;

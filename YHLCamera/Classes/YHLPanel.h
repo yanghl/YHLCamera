@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHLCameraViewController.h"
 
 @interface YHLPanel : UIView
+
+@property (nonatomic,assign) cameraType type;
 
 @end
