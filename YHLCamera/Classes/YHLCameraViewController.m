@@ -198,7 +198,16 @@
     }
     UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
     _image=im;
-    self.clipVC.imageView.image=im;
+    if (self.type==defaultType) {
+        self.clipVC.defaultImage.image=im;
+        self.clipVC.imageView.hidden=YES;
+        self.clipVC.defaultImage.hidden=NO;
+    }else{
+        self.clipVC.imageView.image=im;
+        self.clipVC.defaultImage.hidden=YES;
+        self.clipVC.imageView.hidden=NO;
+    }
+    
     UIGraphicsEndImageContext();
     
     

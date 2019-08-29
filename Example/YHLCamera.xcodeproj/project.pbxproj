@@ -63,7 +63,7 @@
 		ACA3774CCD50A353CC466553 /* libPods-YHLCamera_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YHLCamera_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABE69110F53C27539C1AF74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D294C470722E3863B798B6C9 /* Pods-YHLCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YHLCamera_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D431EE592E3E5D3A355A30E6 /* YHLCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YHLCamera.podspec; path = ../YHLCamera.podspec; sourceTree = "<group>"; };
+		D431EE592E3E5D3A355A30E6 /* YHLCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YHLCamera.podspec; path = ../YHLCamera.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +201,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				5791F8E04BC0423CBB3275B1 /* [CP] Embed Pods Frameworks */,
-				981441BF876DA8F6A6B7BDCB /* [CP] Copy Pods Resources */,
+				46180D0351B276437007941D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +253,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -291,22 +291,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5791F8E04BC0423CBB3275B1 /* [CP] Embed Pods Frameworks */ = {
+		46180D0351B276437007941D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/YHLCamera/YHLCamera.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-resources.sh",
+				"${PODS_ROOT}/../../YHLCamera/Classes/YHLCameraViewController.xib",
+				"${PODS_ROOT}/../../YHLCamera/Classes/YHLClipViewController.xib",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YHLCamera.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCameraViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLClipViewController.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		768CC804F8296D89C48E025F /* [CP] Check Pods Manifest.lock */ = {
@@ -325,28 +327,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		981441BF876DA8F6A6B7BDCB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-resources.sh",
-				"${PODS_ROOT}/../../YHLCamera/Classes/YHLCameraViewController.xib",
-				"${PODS_ROOT}/../../YHLCamera/Classes/YHLClipViewController.xib",
-				"${PODS_CONFIGURATION_BUILD_DIR}/YHLCamera/YHLCamera.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCameraViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLClipViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YHLCamera.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YHLCamera_Example/Pods-YHLCamera_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

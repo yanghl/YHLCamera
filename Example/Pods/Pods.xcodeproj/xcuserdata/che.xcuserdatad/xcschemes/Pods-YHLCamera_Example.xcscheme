@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7BF1FC915E23F2DBD5756C81F24E1DD7'
-               BlueprintName = 'Pods-YHLCamera_Example'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-YHLCamera_Example.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82C328455A8E18414BDD35A833333A0A"
+               BuildableName = "libPods-YHLCamera_Example.a"
+               BlueprintName = "Pods-YHLCamera_Example"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

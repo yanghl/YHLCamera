@@ -12,18 +12,13 @@
     "sean.yang": "272789124@qq.com"
   },
   "source": {
-    "git": "https://github.com/yanghl/YHLCamera",
+    "git": "https://github.com/yanghl/YHLCamera.git",
     "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "YHLCamera/Classes/**/*.{h,c,m}",
   "resources": "YHLCamera/Classes/**/*.{xib,nib,plist}",
-  "requires_arc": true,
-  "resource_bundles": {
-    "YHLCamera": [
-      "YHLCamera/Assets/**/*.png"
-    ]
-  }
+  "requires_arc": true
 }
