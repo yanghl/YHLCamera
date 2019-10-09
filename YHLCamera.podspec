@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'YHLCamera/Classes/**/*.{h,c,m}'
   s.resources = 'YHLCamera/Classes/**/*.{xib,nib,plist}'
+  #s.resource     = 'YHLCamera/YHLCamera2.bundle'
   s.requires_arc = true
 
 end

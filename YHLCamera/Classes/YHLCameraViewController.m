@@ -23,9 +23,6 @@
 @property (nonatomic,strong) YHLCamera *camera;
 @property (nonatomic,strong) YHLClipViewController *clipVC;
 
-
-
-
 - (IBAction)cameraClick:(id)sender;
 - (IBAction)closeClick:(id)sender;
 @property (weak, nonatomic) IBOutlet YHLCameraButton *cameraButon;
@@ -52,7 +49,8 @@
 @implementation YHLCameraViewController
 
 -(instancetype)initWithParam:(cameraType)type{
-    self = [self init];
+    self = [self initWithNibName:@"YHLCameraViewController" bundle:[NSBundle bundleForClass:[YHLCameraViewController class]]];
+//    self = [self init];
     if (self) {
         self.type=type;
     }
@@ -69,7 +67,7 @@
     self.maskView.type=self.type;
     self.camera=[[YHLCamera alloc] init];
     
-    self.clipVC=[YHLClipViewController new];
+    self.clipVC=[[YHLClipViewController alloc] initWithNibName:@"YHLClipViewController" bundle:[NSBundle bundleForClass:[YHLClipViewController class]]];
     self.clipVC.delegate=self;
     
     [self addChildViewController:self.clipVC];
